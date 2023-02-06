@@ -1,5 +1,4 @@
 public class Worker {
-
     private OnTaskDoneListener callback;
     private OnTaskErrorListener errorCallback;
 
@@ -8,15 +7,13 @@ public class Worker {
         this.callback = callback;
     }
 
-
     public void start() {
         for (int i = 0; i < 100; i++) {
             if (i == 33) {
                 errorCallback.onError("Task " + i + " is not done. Error!");
-
-                   } else {
+            } else {
                 callback.onDone("Task " + i + " is done");
-           }
+            }
 
         }
 
